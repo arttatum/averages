@@ -1,12 +1,12 @@
 // Given a list of integers, use a vector and return:
-// - mean (the average value), 
-// - median (when sorted, the value in the middle position), 
+// - mean (the average value),
+// - median (when sorted, the value in the middle position),
 // - mode (the value that occurs most often; a hash map will be helpful here) of the list.
 
 use std::collections::HashMap;
 
 fn main() {
-    // Alternative syntax:     
+    // Alternative syntax:
     //   let v: Vec<i32> = Vec::new();
     let mut vector_of_integers = vec![1, 1, 2, 3];
 
@@ -18,7 +18,7 @@ fn main() {
     println!("The mode is: {}", calculate_mode(&vector_of_integers));
 }
 
-// O(n) time complexity, can be combined with calculate_mode for 
+// O(n) time complexity, can be combined with calculate_mode for
 // further optimisation. Since we can calculate both in a single loop.
 fn calculate_mean(vector: &Vec<i32>) -> f32 {
     let mut sum: i32 = 0;
@@ -39,7 +39,7 @@ fn calculate_median(vector: &Vec<i32>) -> f32 {
 }
 
 // O(n) time complexity, since we have to iterate over the vector...
-fn calculate_mode(vector: &Vec<i32> ) -> i32 {
+fn calculate_mode(vector: &Vec<i32>) -> i32 {
     let mut frequency_counter = HashMap::new();
 
     // A named struct would be nicer here
@@ -53,6 +53,5 @@ fn calculate_mode(vector: &Vec<i32> ) -> i32 {
         }
     }
 
-    return most_common_int.0;
+    most_common_int.0
 }
-
